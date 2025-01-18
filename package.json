@@ -1,0 +1,26 @@
+{
+  "name": "product-list",
+  "version": "1.0.0",
+  "description": "This project has been created by a student at Parsity, an online software engineering course. The work in this repository is wholly of the student based on a sample starter project that can be accessed by looking at the repository that this project forks.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanhendrick/product-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanhendrick/product-list/issues"
+  },
+  "homepage": "https://github.com/evanhendrick/product-list#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "faker": "^6.6.6",
+    "mongoose": "^8.9.5"
+  }
+}
