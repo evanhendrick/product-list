@@ -8,7 +8,9 @@ const bodyParser = require("body-parser");
 //this is an asynchronous function and returns a promise. It takes a minute to respond
 //needed 127.0.0.1 to fix connection issue
 // and needed to specify which DB we were connecting to in order to write to it (i.e. /myapp)
-mongoose.connect("mongodb://127.0.0.1:27017/myapp", {
+
+//mongodb://127.0.0.1:27017/products
+mongoose.connect("mongodb://127.0.0.1/products", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
