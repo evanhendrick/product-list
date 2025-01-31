@@ -87,11 +87,10 @@ router.post("/products", (request, response, next) => {
 
 // creates a new review in the DB by adding it to the correct product's reviews array
 //needs to find the matching product and save the new review to that product's review array
-router.post("/products/:product/reviews", (request, response, next) => {
+router.post("/products/:product/reviews", async (request, response, next) => {
 
   console.log("REQUEST BODY>>", request.body)
 
-  
   let review = new Review({
     username: request.body.userName,
     text: request.body.text,
@@ -100,42 +99,23 @@ router.post("/products/:product/reviews", (request, response, next) => {
 
   console.log("REVIEW PRODUCT ID>>", review.product)
   
-  // Product.find({_id:review.product})
-  // .then((prod) => {
-  //   console.log("PRODUCT FOUND>>", prod)
-  //   prod.reviews.push(review)
-  // })
-  // .catch((err) => {
-  //   if(err) throw err
-  // })
+  console.log("NEW REVIEW>>", review)
+  await review.save((err) => {
+    if(err) throw err
+  })
 
-  // Product.find({_id:review.product})
-  // .exec((err, product) => {
-  //   console.log( "PRODUCTS RESULT>>", product)
-  //   console.log("NEW REVIEW>>", review)
-  //   product.reviews = review
-
-  //   product.save((err) => {
-  //     if(err) throw err
-  //   })
+  let newProduct = Product.findOne({ _id: request.body.product })
+  // .exec((err, prod) =>{
+  //   prod.reviews.push(review._id)
   // })
 
-  let query = review.product
+  newProduct.reviews.push(review._id)
+  console.log("NEW PRODUCT", newProduct)
 
-  Product.findOneAndUpdate(query, {reviews: [review]})
-  
+  await newProduct.save((err) => {
+    if(err) throw err
+  })
 
-  // const filter = review.product
-
-  // Product.findOneAndUpdate(filter, review)
-  // // .then((prod) => {
-  // //   console.log(prod)
-  // // })
-
-  // console.log("NEW REVIEW>>", review)
-  // // review.save((err) => {
-  // //   if(err) throw err
-  // // })
   response.end()
 })
 
