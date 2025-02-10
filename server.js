@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
@@ -7,13 +8,14 @@ mongoose.connect("mongodb://127.0.0.1/products", {
   useUnifiedTopology: true,
 })
 .then(() => {
-  console.log("Successfully connected to the Mongo database.")
+  console.log("Successfully connected to the Mongo database")
 })
 .catch((err) => {
   console.log(err)
 })
 
 const app = express();
+app.use(cors())
 
 app.use(bodyParser.json());
 app.use(

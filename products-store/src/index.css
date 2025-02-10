@@ -1,0 +1,31 @@
+.card {
+  width: 290px;
+  height: 95%;
+  margin:10px;
+}
+
+body {
+  background: rgb(243, 240, 240);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#card-header p, #card-header h4{
+  display: inline;
+  vertical-align: top;
+  padding-bottom: 50px;
+}
+
+#card-header p {
+  margin-right: 20%;
+  margin-left: -15px;
+} 
