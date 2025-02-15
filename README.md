@@ -2,8 +2,10 @@
 
 To start:
 
+Backend
 Run server > open terminal and type "node server.js"
 
+Frontend
 Open new terminal > type "cd products-store" > type "npm start"
 
 
