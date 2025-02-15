@@ -360,6 +360,8 @@ router.post("/products", (request, response, next) => {
   product.price = params.price;
   product.image = params.image;
 
+  //forgot to do product.save()
+
   response.send("New product added!");
 });
 

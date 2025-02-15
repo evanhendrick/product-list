@@ -1,5 +1,11 @@
 ## Product List
 
+To start:
+
+Run server > open terminal and type "node server.js"
+
+Open new terminal > type "cd products-store" > type "npm start"
+
 
 This project has been created by a student at Parsity, an online software engineering course. The work in this repository is wholly of the student based on a sample starter project that can be accessed by looking at the repository that this project forks.
 
