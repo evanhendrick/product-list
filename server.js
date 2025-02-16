@@ -14,6 +14,8 @@ mongoose.connect("mongodb://127.0.0.1/products", {
   console.log(err)
 })
 
+const port = process.env.PORT || 8080
+
 const app = express();
 app.use(cors())
 
@@ -29,5 +31,5 @@ const mainRoutes = require("./routes/main");
 app.use(mainRoutes);
 
 app.listen(8000, () => {
-  console.log("Node.js listening on port " + 8000);
+  console.log("Node.js listening on port " + 8080);
 });
